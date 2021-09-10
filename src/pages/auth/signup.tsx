@@ -21,12 +21,9 @@ export const Signup: FC = (props: Props) => {
 
   const handleSubmit = () => {
     axios
-      .post('localhost:5000/user', {
-        title: 'hello world',
-        body: {
-          username,
-          email: emailAddress,
-        },
+      .post('http://localhost:5000/user', {
+        username,
+        email: emailAddress,
       })
       .then((res) => console.log(res));
   };
@@ -48,7 +45,7 @@ export const Signup: FC = (props: Props) => {
             />
           </h1>
 
-          <form method="POST">
+          <form method="GET">
             <input
               aria-label="Enter your username"
               type="text"
@@ -81,13 +78,17 @@ export const Signup: FC = (props: Props) => {
               onChange={({ target }) => setPassword(target.value)}
               value={password}
             />
-            <button
-              type="submit"
-              className={'bg-blue-400 text-white w-full rounded h-8 font-bold'}
-              onClick={handleSubmit}
-            >
-              Sign Up
-            </button>
+            <Link to={ROUTES.DASHBOARD}>
+              <button
+                type="submit"
+                className={
+                  'bg-blue-400 text-white w-full rounded h-8 font-bold'
+                }
+                onClick={handleSubmit}
+              >
+                Sign Up
+              </button>
+            </Link>
           </form>
         </div>
         <div className="flex justify-center items-center flex-col w-full bg-white p-4 rounded border border-gray-primary">

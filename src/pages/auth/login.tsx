@@ -50,12 +50,14 @@ export const Login: FC = (props: Props) => {
               onChange={({ target }) => setPassword(target.value)}
               value={password}
             />
-            <button
-              type="submit"
-              className={`bg-blue-400 text-white w-full rounded h-8 font-bold`}
-            >
-              Login
-            </button>
+            <Link to={ROUTES.DASHBOARD}>
+              <button
+                type="submit"
+                className={`bg-blue-400 text-white w-full rounded h-8 font-bold`}
+              >
+                Login
+              </button>
+            </Link>
           </form>
         </div>
         <div className="flex justify-center items-center flex-col w-full bg-white p-4 rounded-sm border border-gray-primary">
