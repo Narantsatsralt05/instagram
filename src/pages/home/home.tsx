@@ -13,6 +13,7 @@ interface PostTypes {
 export const Home: FC = (props: Props) => {
   const [posts, setPosts] = useState<PostTypes[]>([]);
   useEffect(() => {
+    document.title = 'Instagram';
     axios
       .get('http://localhost:5000/posts')
       .then((res) => {

@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { FC, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../constants/routes';
@@ -6,12 +7,22 @@ interface Props {}
 
 export const Login: FC = (props: Props) => {
   const [password, setPassword] = useState<string>();
-  const [emailAddress, setEmailAddress] = useState<string>();
-  const handleLogin = () => {};
+  const [email, setEmailAddress] = useState<string>();
 
   useEffect(() => {
     document.title = 'Login - Instagram';
   }, []);
+
+  const handleLogin = () => {
+    axios
+      .post('http://localhost:5000/login', {
+        password,
+        email,
+      })
+      .then((res) => {
+        console.log(res);
+      });
+  };
 
   return (
     <div className="container flex mx-auto max-w-screen-md items-center h-screen ">
@@ -40,7 +51,7 @@ export const Login: FC = (props: Props) => {
               placeholder="Email address"
               className="text-sm text-gray-base w-full mr-3 py-5 px-4 h-2 border border-gray-primary rounded mb-2"
               onChange={({ target }) => setEmailAddress(target.value)}
-              value={emailAddress}
+              value={email}
             />
             <input
               aria-label="Enter your password"
@@ -52,6 +63,7 @@ export const Login: FC = (props: Props) => {
             />
             <Link to={ROUTES.DASHBOARD}>
               <button
+                onClick={handleLogin}
                 type="submit"
                 className={`bg-blue-400 text-white w-full rounded h-8 font-bold`}
               >

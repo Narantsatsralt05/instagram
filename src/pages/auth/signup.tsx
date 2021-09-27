@@ -14,18 +14,20 @@ export const Signup: FC = (props: Props) => {
   useEffect(() => {
     document.title = 'Sign Up - Instagram';
     axios
-      .get('localhost:5000/users')
+      .get('http://localhost:5000/users')
       .then((res) => console.log(res))
       .catch((err) => console.log(err.message));
   }, []);
 
   const handleSubmit = () => {
     axios
-      .post('http://localhost:5000/user', {
+      .post('http://localhost:5000/register', {
         username,
         email: emailAddress,
+        fullName,
+        password,
       })
-      .then((res) => console.log(res));
+      .then((res) => console.log('respond ======>>>>', res));
   };
   return (
     <div className="container flex mx-auto max-w-screen-md items-center h-screen">
