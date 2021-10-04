@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { ROUTES } from '../constants/routes';
 import { Home, Login, Signup } from '../pages';

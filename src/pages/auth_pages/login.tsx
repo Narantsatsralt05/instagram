@@ -20,7 +20,7 @@ export const Login: FC = (props: Props) => {
         email,
       })
       .then((res) => {
-        console.log(res);
+        console.log(res.config.data);
       });
   };
 
@@ -41,9 +41,6 @@ export const Login: FC = (props: Props) => {
               className="mt-2 w-6/12 mb-4"
             />
           </h1>
-
-          {/* {error && <p className="mb-4 text-xs text-red-primary">{error}</p>} */}
-
           <form onSubmit={handleLogin} method="POST">
             <input
               aria-label="Enter your email address"

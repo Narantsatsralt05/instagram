@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { FC, useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../constants/routes';
 
@@ -80,7 +80,7 @@ export const Signup: FC = (props: Props) => {
               onChange={({ target }) => setPassword(target.value)}
               value={password}
             />
-            <Link to={ROUTES.DASHBOARD}>
+            <Link to={ROUTES.LOGIN}>
               <button
                 type="submit"
                 className={
