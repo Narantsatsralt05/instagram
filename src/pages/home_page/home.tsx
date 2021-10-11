@@ -21,22 +21,22 @@ const mockPosts = [
   {
     photo_url: 'https://picsum.photos/500/540?img=2',
     caption: 'sartai shono naraa code bichin suuna ...',
-    profile_pic: 'https://i.pravatar.cc/40?img=1',
+    profile_pic: 'https://i.pravatar.cc/40?img=2',
   },
   {
     photo_url: 'https://picsum.photos/500/540?img=3',
     caption: 'sartai shono naraa code bichin suuna ...',
-    profile_pic: 'https://i.pravatar.cc/40?img=1',
+    profile_pic: 'https://i.pravatar.cc/40?img=3',
   },
   {
     photo_url: 'https://picsum.photos/500/540?img=4',
     caption: 'sartai shono naraa code bichin suuna ...',
-    profile_pic: 'https://i.pravatar.cc/40?img=1',
+    profile_pic: 'https://i.pravatar.cc/40?img=4',
   },
   {
     photo_url: 'https://picsum.photos/500/540?img=5',
     caption: 'sartai shono naraa code bichin suuna ...',
-    profile_pic: 'https://i.pravatar.cc/40?img=1',
+    profile_pic: 'https://i.pravatar.cc/40?img=5',
   },
 ];
 
